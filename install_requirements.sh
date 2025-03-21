@@ -20,10 +20,6 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install ros-jazzy-desktop -y
 
-## Source ROS 2 environment
-echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-
 ## Install development tools and ROS tools
 sudo apt install -y \
   python3-pip \
@@ -44,9 +40,16 @@ sudo apt install ros-jazzy-rviz2 -y
 
 ## install gazebo
 sudo apt install ros-jazzy-gazebo-* -y
-sudo apt install gazebo -y
 
 ######
 # Install Project Dependencies
 ######
+
+
+
+######
+## Source ROS 2 environment
+######
+echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 
