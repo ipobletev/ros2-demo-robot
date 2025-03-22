@@ -25,17 +25,17 @@ This ROS2-based project implements an autonomous robot system capable of automat
     ./install_requirements.sh
     source ./install/setup.bash
 
-## Ejecution
+## Main Execution
 
-    
+    ros2 launch robot_bringup main_robot.launch.xml
 
-## Others ejecutions
+## Others executions
 
     # Sensors
 
     ## RPLidar
     ros2 launch rplidar_ros view_rplidar_a1_launch.py
+    ros2 run rplidar_ros rplidar_node
 
-    ## Camera usb ejecucion
-    
+    ## Camera usb execucion
     ros2 run usb_camera usb_camera_node
