@@ -23,3 +23,17 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
     sudo chmod -R 770 ./install_requirements.sh
     ./install_requirements.sh
+    source ./install/setup.bash
+
+## Ejecution
+
+## Others ejecutions
+
+    # Sensors
+
+    ## RPLidar
+    ros2 launch rplidar_ros view_rplidar_a1_launch.py
+
+    ## Camera usb ejecucion
+    
+    ros2 run usb_camera usb_camera_node

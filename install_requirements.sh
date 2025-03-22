@@ -44,8 +44,9 @@ sudo apt install ros-jazzy-gazebo-* -y
 ######
 # Install Project Dependencies
 ######
-
-
+# Camera USB
+sudo apt install ros-jazzy-v4l2-camera
+sudo apt install ros-jazzy-cv-bridge ros-jazzy-image-transport
 
 ######
 ## Source ROS 2 environment
