@@ -27,6 +27,8 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
 ## Ejecution
 
+    
+
 ## Others ejecutions
 
     # Sensors

@@ -30,4 +30,8 @@ add_executable(usb_camera_node src/usb_camera_node.cpp)
 target_link_libraries(usb_camera_node ${OpenCV_LIBRARIES})
 ament_target_dependencies(usb_camera_node rclcpp sensor_msgs cv_bridge OpenCV)
 
+install(TARGETS usb_camera_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()
