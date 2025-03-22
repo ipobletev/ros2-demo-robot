@@ -11,7 +11,6 @@ find_package(OpenCV REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(image_transport REQUIRED)
 
 include_directories(${cv_bridge_INCLUDE_DIRS})
 
@@ -29,6 +28,6 @@ endif()
 
 add_executable(usb_camera_node src/usb_camera_node.cpp)
 target_link_libraries(usb_camera_node ${OpenCV_LIBRARIES})
-ament_target_dependencies(usb_camera_node rclcpp sensor_msgs cv_bridge OpenCV image_transport)
+ament_target_dependencies(usb_camera_node rclcpp sensor_msgs cv_bridge OpenCV)
 
 ament_package()
