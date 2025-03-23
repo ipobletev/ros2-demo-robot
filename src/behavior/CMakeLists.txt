@@ -12,6 +12,7 @@ find_package(behaviortree_cpp_v3 REQUIRED)
 
 add_executable(behavior_node src/behavior_node.cpp)
 ament_target_dependencies(behavior_node rclcpp behaviortree_cpp_v3)
+
 install(TARGETS behavior_node
   DESTINATION lib/${PROJECT_NAME})
 

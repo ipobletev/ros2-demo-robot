@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root BTCPP_format="4" main_tree_to_execute="bt_main">
-  <BehaviorTree ID="bt_main">
+<root BTCPP_format="4" main_tree_to_execute="bt_nodes">
+  <BehaviorTree ID="bt_nodes">
     <Sequence>
-      <Include path="behavior_trees/bt_go_home.xml"/>
-      <Include path="behavior_trees/bt_navigation.xml"/>
+      <Action ID="node_a"/>
+      <Action ID="node_b"/>
     </Sequence>
   </BehaviorTree>
-
   <TreeNodesModel>
-    <Action ID="NodoA" path="src/test_nodes/node_a"/>
-    <Action ID="NodoB" path="src/test_nodes/node_b"/>
+    <Action ID="node_a" path="src/test_nodes/node_a"/>
+    <Action ID="node_b" path="src/test_nodes/node_b"/>
   </TreeNodesModel>
 </root>

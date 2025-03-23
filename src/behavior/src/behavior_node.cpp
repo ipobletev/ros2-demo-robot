@@ -9,7 +9,14 @@ class BehaviorNode : public rclcpp::Node {
 public:
     BehaviorNode() : Node("behavior_node") {
         RCLCPP_INFO(this->get_logger(), "Behavior Node (BehaviorNode) initialized.");
+        timer_ = this->create_wall_timer(1s, std::bind(&BehaviorNode::timer_callback, this));
     }
+
+private:
+    void timer_callback() {
+        RCLCPP_INFO(this->get_logger(), "Behavior Node alive!");
+    }
+    rclcpp::TimerBase::SharedPtr timer_;
 };
 
 int main(int argc, char **argv)
@@ -19,16 +26,16 @@ int main(int argc, char **argv)
 
     BT::BehaviorTreeFactory factory;
 
-    // // Register actions with correct signature
-    // factory.registerSimpleAction("node_a", [](BT::TreeNode& tree_node) -> BT::NodeStatus {
-    //     RCLCPP_INFO(rclcpp::get_logger("node_a"), "Executing node_a");
-    //     return BT::NodeStatus::SUCCESS;
-    // });
+    // Register actions with correct signature
+    factory.registerSimpleAction("node_a", [](BT::TreeNode& tree_node) -> BT::NodeStatus {
+        RCLCPP_INFO(rclcpp::get_logger("node_a"), "Executing node_a");
+        return BT::NodeStatus::SUCCESS;
+    });
 
-    // factory.registerSimpleAction("node_b", [](BT::TreeNode& tree_node) -> BT::NodeStatus {
-    //     RCLCPP_INFO(rclcpp::get_logger("node_b"), "Executing node_b");
-    //     return BT::NodeStatus::SUCCESS;
-    // });
+    factory.registerSimpleAction("node_b", [](BT::TreeNode& tree_node) -> BT::NodeStatus {
+        RCLCPP_INFO(rclcpp::get_logger("node_b"), "Executing node_b");
+        return BT::NodeStatus::SUCCESS;
+    });
 
     auto tree = factory.createTreeFromFile("src/behavior/bt_main.xml");
 
@@ -37,6 +44,8 @@ int main(int argc, char **argv)
         tree.tickRoot();
         std::this_thread::sleep_for(100ms);
     }
+
+    rclcpp::spin(node);
 
     rclcpp::shutdown();
     return 0;
