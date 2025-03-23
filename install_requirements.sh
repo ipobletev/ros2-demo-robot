@@ -44,6 +44,9 @@ sudo apt install ros-jazzy-gazebo-* -y
 ##  QT5
 sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev
 
+## BehaviorTree
+sudo apt-get install ros-jazzy-behaviortree-cpp-v3
+
 ######
 # Install Project Dependencies
 ######

@@ -8,12 +8,12 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(behaviortree_cpp_v3 REQUIRED)
 
-# add_executable(nodo_a src/nodo_a.cpp)
-# target_link_libraries(nodo_a ${rclcpp_LIBRARIES})
-
-# add_executable(nodo_b src/nodo_b.cpp)
-# target_link_libraries(nodo_b ${rclcpp_LIBRARIES})
+add_executable(behavior_node src/behavior_node.cpp)
+ament_target_dependencies(behavior_node rclcpp behaviortree_cpp_v3)
+install(TARGETS behavior_node
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

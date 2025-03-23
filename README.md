@@ -21,9 +21,20 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
 ## Installation
 
+1. Install ROS2 and dependencies
+
     sudo chmod -R 770 ./install_requirements.sh
     ./install_requirements.sh
     source ./install/setup.bash
+
+2- Install BehaviorTree.CPP
+    
+    https://github.com/BehaviorTree/BehaviorTree.CPP
+    cd ./src/3rdparty/BehaviorTree.CPP
+    mkdir build; cd build
+    cmake ..
+    make
+    sudo make install
 
 ## Main Execution
 
@@ -39,3 +50,7 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
     ## Camera usb execucion
     ros2 run usb_camera usb_camera_node
+
+
+## Flow
+

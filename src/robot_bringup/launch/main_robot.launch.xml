@@ -1,4 +1,10 @@
 <launch>
-    <node pkg="rplidar_ros" exec="rplidar_node" name="lidar_1"/>
-    <node pkg="usb_camera" exec="usb_camera_node" name="camera_1"/>
+  <node
+      pkg="behavior"
+      exec="behavior_node"
+      name="behavior_node"
+      output="screen">
+  </node>
+    <!-- <node pkg="rplidar_ros" exec="rplidar_node" name="lidar_1"/>
+    <node pkg="usb_camera" exec="usb_camera_node" name="camera_1"/> -->
 </launch>

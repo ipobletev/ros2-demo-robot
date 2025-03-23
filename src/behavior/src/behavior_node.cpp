@@ -1,35 +1,37 @@
-#include <behaviortree_cpp_v3/bt_factory.h>
 #include <rclcpp/rclcpp.hpp>
+#include <behaviortree_cpp_v3/bt_factory.h>
 #include <chrono>
+#include <thread>
 
 using namespace std::chrono_literals;
 
-// Supongamos que ya tienes implementadas las clases NodeA y NodeB.
-// Debes definirlas adaptadas para que sean compatibles con BehaviorTreeCPP.
+class BehaviorNode : public rclcpp::Node {
+public:
+    BehaviorNode() : Node("behavior_node") {
+        RCLCPP_INFO(this->get_logger(), "Behavior Node (BehaviorNode) initialized.");
+    }
+};
 
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<BehaviorNode>();
 
-    // Crear la fábrica del Behavior Tree.
     BT::BehaviorTreeFactory factory;
 
-    // Registrar las acciones, asegurándote que las clases coincidan con la definición en el XML.
-    factory.registerSimpleAction("NodoA", []() -> BT::NodeStatus {
-        RCLCPP_INFO(rclcpp::get_logger("NodoA"), "Ejecutando NodoA");
-        return BT::NodeStatus::SUCCESS;
-    });
+    // // Register actions with correct signature
+    // factory.registerSimpleAction("node_a", [](BT::TreeNode& tree_node) -> BT::NodeStatus {
+    //     RCLCPP_INFO(rclcpp::get_logger("node_a"), "Executing node_a");
+    //     return BT::NodeStatus::SUCCESS;
+    // });
 
-    factory.registerSimpleAction("NodoB", []() -> BT::NodeStatus {
-        RCLCPP_INFO(rclcpp::get_logger("NodoB"), "Ejecutando NodoB");
-        return BT::NodeStatus::SUCCESS;
-    });
+    // factory.registerSimpleAction("node_b", [](BT::TreeNode& tree_node) -> BT::NodeStatus {
+    //     RCLCPP_INFO(rclcpp::get_logger("node_b"), "Executing node_b");
+    //     return BT::NodeStatus::SUCCESS;
+    // });
 
-    // Cargar el behavior tree desde el archivo XML "bt_main.xml"
     auto tree = factory.createTreeFromFile("src/behavior/bt_main.xml");
 
-    // Ciclo de tick para ejecutar el árbol
     while (rclcpp::ok() && tree.rootNode()->status() != BT::NodeStatus::SUCCESS)
     {
         tree.tickRoot();
