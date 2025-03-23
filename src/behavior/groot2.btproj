@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" project_name="Project">
+    <include path="behavior_trees/bt_go_home.xml"/>
+    <include path="behavior_trees/bt_navigation.xml"/>
+    <include path="bt_main.xml"/>
+    <!-- Description of Node Models (used by Groot) -->
+    <TreeNodesModel>
+        <Action ID="Action" editable="true"/>
+        <Action ID="Include" editable="true">
+            <input_port name="path"/>
+        </Action>
+    </TreeNodesModel>
+</root>
