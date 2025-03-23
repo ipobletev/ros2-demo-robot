@@ -38,8 +38,11 @@ rosdep update
 ## Install rviz2
 sudo apt install ros-jazzy-rviz2 -y
 
-## install gazebo
+## Install gazebo
 sudo apt install ros-jazzy-gazebo-* -y
+
+##  QT5
+sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev
 
 ######
 # Install Project Dependencies
