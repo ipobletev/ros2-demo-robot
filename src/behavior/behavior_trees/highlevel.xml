@@ -24,7 +24,6 @@
           </Fallback>
         </Sequence>
       </Fallback>
-      <Action ID="Perception" />
     </Sequence>
   </BehaviorTree>
 </root>
