@@ -13,7 +13,7 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
 ## Prerequisites
 
-- Ubuntu 22.04
+- Ubuntu 24.04 Noble
 - ROS2 Jazzy
 - Gazebo
 - RViz2
