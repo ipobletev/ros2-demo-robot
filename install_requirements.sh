@@ -50,6 +50,8 @@ sudo apt install ros-jazzy-rviz2 -y
 ## Install Gazebo Ros
 sudo apt install ros-jazzy-gazebo-* -y
 sudo apt-get install ros-jazzy-ros-gz
+### Tools
+sudo apt install ros-jazzy-joint-state-publisher-gui
 
 ##  QT5
 sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev -y
