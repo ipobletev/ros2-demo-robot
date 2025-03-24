@@ -40,6 +40,14 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
     ros2 launch robot_bringup main_robot.launch.xml
 
+## Description RVIZ Execution
+
+    ros2 launch description display.launch.xml
+
+## Simulation Gazebo Execution
+
+    ros2 launch simulation gazebo_sim.launch.xml
+
 ## Others executions
 
     # Sensors
