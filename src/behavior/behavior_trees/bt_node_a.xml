@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root BTCPP_format="4">
   <BehaviorTree ID="bt_node_a">
-    <NodoA/>
+    <Sequence>
+      <Action ID="node_a"/>
+    </Sequence>
   </BehaviorTree>
 
-  <TreeNodesModel/>
+  <TreeNodesModel>
+    <Action ID="node_a" path="src/test_nodes/node_a"/>
+  </TreeNodesModel>
 </root>

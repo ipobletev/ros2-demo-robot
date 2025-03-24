@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root BTCPP_format="4" main_tree_to_execute="bt_nodes">
-  <BehaviorTree ID="bt_nodes">
+<root BTCPP_format="4" main_tree_to_execute="bt_main">
+  <BehaviorTree ID="bt_main">
     <Sequence>
-      <Action ID="node_a"/>
-      <Action ID="node_b"/>
+      <SubTree ID="bt_node_a"/>
+      <SubTree ID="bt_node_b"/>
     </Sequence>
   </BehaviorTree>
-  <TreeNodesModel>
-    <Action ID="node_a" path="src/test_nodes/node_a"/>
-    <Action ID="node_b" path="src/test_nodes/node_b"/>
-  </TreeNodesModel>
 </root>
