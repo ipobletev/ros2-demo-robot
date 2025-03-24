@@ -32,31 +32,38 @@ sudo rosdep init
 rosdep update
 
 ######
+## Source ROS 2 environment
+######
+echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+######
 # Install Ros2 Dependencies
 ######
+
+## Others Tools
+sudo apt install python3-colcon-common-extensions
 
 ## Install rviz2
 sudo apt install ros-jazzy-rviz2 -y
 
-## Install gazebo
+## Install Gazebo Ros
 sudo apt install ros-jazzy-gazebo-* -y
+sudo apt-get install ros-jazzy-ros-gz
 
 ##  QT5
-sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev
+sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev -y
 
 ## BehaviorTree
-sudo apt-get install ros-jazzy-behaviortree-cpp-v3
+sudo apt-get install ros-jazzy-behaviortree-cpp-v3 -y
+
+## Navigation NAV2
+sudo apt-get install ros-jazzy-navigation2 ros-jazzy-nav2-bringup -y
 
 ######
 # Install Project Dependencies
 ######
 # Camera USB
-sudo apt install ros-jazzy-v4l2-camera
-sudo apt install ros-jazzy-cv-bridge ros-jazzy-image-transport
-
-######
-## Source ROS 2 environment
-######
-echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+sudo apt install ros-jazzy-v4l2-camera -y
+sudo apt install ros-jazzy-cv-bridge ros-jazzy-image-transport -y
 

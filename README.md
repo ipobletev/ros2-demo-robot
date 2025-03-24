@@ -54,3 +54,19 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
 ## Flow
 
+
+## Others  
+
+In VM if gazebo screen flickering then use
+
+    LIBGL_ALWAYS_SOFTWARE=1
+
+# Project Structure
+
+The project is organized into the following directories:
+
+- `src/`: Main source code directory
+  - `behavior/`: Behavior tree XML definitions and configurations
+  - `description/`: Robot URDF description and meshes
+  - `robot_bringup/`: Launch files and configuration for bringing up the robot
+  - `3rdparty/`: Third-party dependencies
