@@ -50,8 +50,14 @@ sudo apt install ros-jazzy-rviz2 -y
 ## Install Gazebo Ros
 sudo apt install ros-jazzy-gazebo-* -y
 sudo apt-get install ros-jazzy-ros-gz
+sudo apt-get install curl lsb-release gnupg
+sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+sudo apt-get update
+sudo apt-get install gz-harmonic
 ### Tools
 sudo apt install ros-jazzy-joint-state-publisher-gui
+sudo apt-get install ros-jazzy-gz-ros2-control
 
 ##  QT5
 sudo apt install qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev -y
