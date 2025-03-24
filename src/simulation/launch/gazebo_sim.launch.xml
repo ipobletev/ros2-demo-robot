@@ -1,23 +1,12 @@
 <launch>
-  <!-- Definición del argumento "world" con un valor por defecto -->
-  <arg name="world" default="$(find-pkg-share simulation)/worlds/demo.world" />
-
-  <!-- Asignación de variables para las rutas del URDF, RViz y el world -->
-  <let name="urdf_path" value="$(find-pkg-share description)/urdf/robot.urdf.xacro"/>
-  <let name="rviz_config_path" value="$(find-pkg-share description)/rviz/urdf_config.rviz"/>
-  <!-- Se crea una variable intermedia para el archivo world -->
-  <let name="world_file" value="$(arg world)"/>
-
-  <!-- Nodo que lanza el robot_state_publisher para procesar el URDF -->
-  <node pkg="robot_state_publisher" exec="robot_state_publisher">
-    <param name="description" value="$(command 'xacro $(var urdf_path)')"/>
-  </node>
-
-  <!-- Nodo que lanza RViz2 para la visualización -->
-  <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config_path)"/>
-
-  <!-- Nodo para lanzar Gazebo Harmonic: se lanzan directamente los ejecutables gzserver y gzclient -->
-  <!-- Se utiliza la variable "world_file" para pasar el archivo world al servidor -->
-  <node exec="gzserver" name="gzserver" output="screen" args="$(var world_file)" />
-  <node exec="gzclient" name="gzclient" output="screen" />
+    <let name="urdf_path" value="$(find-pkg-share description)/urdf/robot.urdf.xacro"/>
+    <let name="rviz_config_path" value="$(find-pkg-share description)/rviz/urdf_config.rviz"/>
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="description" value="$(command 'xacro $(var urdf_path)')"/>
+    </node>
+    <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
+        <arg name="world" value="$(find-pkg-share simulation)/worlds/test_world.world"/>
+    </include>
+    <node pkg="gazebo_ros" exec="spawn_entity.py" args="-topic description -entity robot"/>
+    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config_path)"/>
 </launch>

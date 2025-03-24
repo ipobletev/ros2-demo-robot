@@ -44,7 +44,7 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
     ros2 launch description display.launch.xml
 
-## Simulation Gazebo Execution
+## Simulation Gazebo Execution (dont work yet)
 
     ros2 launch simulation gazebo_sim.launch.xml
 
