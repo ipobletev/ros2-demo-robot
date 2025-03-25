@@ -46,7 +46,7 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
 ## Simulation Gazebo Execution (dont work yet)
 
-    ros2 launch simulation gazebo_sim.launch.xml
+    ros2 launch simulation gazebo_sim.launch.xml world_sdf_file:=worlds/test_world.world
 
 ## Others executions
 
@@ -67,7 +67,7 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
 In VM if gazebo screen flickering then use
 
-    LIBGL_ALWAYS_SOFTWARE=1
+    export LIBGL_ALWAYS_SOFTWARE=1
 
 # Project Structure
 
