@@ -8,5 +8,8 @@
     <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config_path)"/>
     
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+
     </include>
+    <node pkg="ros_gz_sim" exec="create" name="spawn_entity" output="screen" args="-string $(command 'xacro $(var urdf_path)') -name robot -allow_renaming true">
+    </node>
 </launch>
