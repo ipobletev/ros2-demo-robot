@@ -46,8 +46,8 @@ This ROS2-based project implements an autonomous robot system capable of automat
 
 ## Simulation Gazebo Execution (dont work yet)
 
-    ros2 launch simulation gazebo_sim.launch.xml world_sdf_file:=worlds/test_world.world
-
+    ros2 launch description gazebo_sim.launch.xml gz_args:="/home/ismael/Desktop/ros2-demo-robot/src/description/worlds/test_gz_world.sdf"
+    
 ## Others executions
 
     # Sensors
